@@ -5,7 +5,7 @@ home=~/sandbox/t$V
 
 flowName=run$V
 
-bucket=ulisse-demo
+bucket=$projectID-demo
 tempLocation=$bucket/temp/
 dataset=Demo
 jobName=$flowName
