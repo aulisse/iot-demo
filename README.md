@@ -6,6 +6,9 @@ Requirements:
 - gcloud (https://cloud.google.com/sdk/gcloud/#what_is_gcloud)
 - JDK and maven
 
-Set your project id in set_params.sh, then follow steps contained in file run.sh
+How to run the demo:
+- set your project id in set_params.sh
+- follow steps contained in file run.sh
 
-Use clean.sh to free up resources
+How to shut down the demo:
+- Use clean.sh to free up resources
