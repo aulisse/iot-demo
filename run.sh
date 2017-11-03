@@ -1,3 +1,5 @@
+#!/bin/bash
+
 . set_params.sh
 
 #create the $tempLocation in CloudStorage
