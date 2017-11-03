@@ -1,3 +1,5 @@
+#!/bin/bash
+
 . set_params.sh
 
 #delete Cloud IoT

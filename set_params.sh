@@ -1,6 +1,9 @@
 projectID=$GCLOUD_PROJECT
 
+#if you want to run the demo multiple times, just increment this variable
 V=41
+
+#sandbox location for local operations
 home=~/sandbox/t$V
 
 flowName=run$V
