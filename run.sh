@@ -2,6 +2,9 @@
 
 . set_params.sh
 
+#login into gcloud
+gcloud auth login
+
 #set the projectID in gcloud
 gcloud config set project $projectID
 
