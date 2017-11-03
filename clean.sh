@@ -11,7 +11,7 @@ gcloud beta pubsub topics delete $topic
 
 #cancel dataflow job
 gcloud dataflow jobs list | grep Running
-job_id=$(gcloud dataflow jobs list | grep Running | awk '{print $1;}')
+job_id=$(gcloud dataflow jobs list | grep $flowName | awk '{print $1;}')
 gcloud dataflow jobs cancel $job_id --region=$dataflowzone
 
 #delete BigQuery table
