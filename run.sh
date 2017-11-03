@@ -19,7 +19,7 @@ cd $home
 gcloud beta pubsub topics create $topic
 
 # add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to that PubSub topic from the Cloud Developer Console 
-# It is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker
+# It is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker.
 
 #create CloudIoT instance
 gcloud beta iot registries create $registryName \
@@ -40,7 +40,8 @@ gcloud beta iot devices create $deviceName \
   --registry=$registryName \
   --public-key path=rsa_cert.pem,type=rs256
 
-#create BigQuery Table
+#create BigQuery DataSet & Table
+bq mk $dataset
 bq mk -t $table message:string,city:string,temperature:float,hour:integer
 
 #run pipeline
