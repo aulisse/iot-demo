@@ -14,7 +14,7 @@ Requirements:
 
 How to run the demo:
 - set your project id in set_params.sh
-- follow steps contained in file run.sh
+- follow steps contained in file run.sh (DO NOT run the whole script, execute instructions step-by-step and read comments)
 
 How to shut down the demo:
 - Use clean.sh to free up resources
