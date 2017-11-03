@@ -1,6 +1,5 @@
 # iot-demo
 
-What is the purpose of the demo?
 The purpose of this demo is to show how simple it is to create a serverless and scalable architecture using GCP.
 The script will guide you through the creation of all the GCP components needed to:
 - ingest data from a device
