@@ -1,7 +1,7 @@
 projectID=$GCLOUD_PROJECT
 
 #if you want to run the demo multiple times, just increment this variable
-V=42
+V=43
 
 #sandbox location for local operations
 home=~/sandbox/t$V

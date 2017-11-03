@@ -18,7 +18,8 @@ cd $home
 #create pubsub topic
 gcloud beta pubsub topics create $topic
 
-# add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to that PubSub topic from the Cloud Developer Console 
+# in the IAM section of the Cloud Console:
+# add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to that PubSub topic
 # It is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker.
 
 #create CloudIoT instance
