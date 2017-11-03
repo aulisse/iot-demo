@@ -2,6 +2,9 @@
 
 . set_params.sh
 
+#set the projectID in gcloud
+gcloud config set project $projectID
+
 #create the $tempLocation in CloudStorage
 gsutil mb gs://$bucket/ && touch a-file && echo "temp" > a-file && gsutil cp a-file gs://$tempLocation && rm a-file
 
@@ -12,7 +15,7 @@ cd $home
 #create pubsub topic
 gcloud beta pubsub topics create $topic
 
-#create service account cloud-iot@system.gserviceaccount.com with PubSub/Pubisher permissions to allow Cloud IoT to push into PubSub messages received on the MQTT broker
+#create service account cloud-iot@system.gserviceaccount.com with PubSub/Pubisher permissions in order to allow Cloud IoT to push into PubSub messages received on the MQTT broker
 
 #create CloudIoT instance
 gcloud beta iot registries create $registryName \
