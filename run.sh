@@ -12,6 +12,8 @@ cd $home
 #create pubsub topic
 gcloud beta pubsub topics create $topic
 
+#create service account cloud-iot@system.gserviceaccount.com with PubSub/Pubisher permissions to allow Cloud IoT to push into PubSub messages received on the MQTT broker
+
 #create CloudIoT instance
 gcloud beta iot registries create $registryName \
     --project=$projectID \
