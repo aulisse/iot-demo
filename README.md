@@ -75,6 +75,7 @@ gcloud beta iot devices create $deviceName \
 
 ### Create BigQuery DataSet & Table
 bq mk $dataset
+
 bq mk -t $table message:string,city:string,temperature:float,hour:integer
 
 ### Run pipeline
@@ -84,9 +85,9 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $(gcl
 cd $home/java-docs-samples/iot/api-client/mqtt_example
 
 ### Modify code:
-line 159 - String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
-line 172 - sleep 300 ms 
-numMessages = 1000 in the options file
+1. line 159 - String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
+2. line 172 - sleep 300 ms 
+3. numMessages = 1000 in the options file
 
 ### Clean and compile 
 mvn clean compile
@@ -95,8 +96,8 @@ mvn clean compile
 mvn exec:java -Dexec.mainClass="com.google.cloud.iot.examples.MqttExample" -Dexec.args="-project_id='$projectID' -registry_id='$registryName' -device_id='$deviceName' -private_key_file=../../../../rsa_private_pkcs8 -algorithm=RS256"
 
 ## Run queries
-bq query "select count(*) as count FROM [$table]"
-bq query "SELECT hour, avg(temperature) as avg_temp FROM [$table] group by hour order by hour asc"
+* bq query "select count(*) as count FROM [$table]"
+* bq query "SELECT hour, avg(temperature) as avg_temp FROM [$table] group by hour order by hour asc"
 
 # How to shut down the demo:
 Use clean.sh to free up resources
