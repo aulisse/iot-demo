@@ -95,7 +95,7 @@ mvn clean compile
 ### Run MQTT client
 mvn exec:java -Dexec.mainClass="com.google.cloud.iot.examples.MqttExample" -Dexec.args="-project_id='$projectID' -registry_id='$registryName' -device_id='$deviceName' -private_key_file=../../../../rsa_private_pkcs8 -algorithm=RS256"
 
-## Run queries
+## Run queries during the ingestion
 * bq query "select count(*) as count FROM [$table]"
 * bq query "SELECT hour, avg(temperature) as avg_temp FROM [$table] group by hour order by hour asc"
 
