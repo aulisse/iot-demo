@@ -85,9 +85,9 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $(gcl
 cd $home/java-docs-samples/iot/api-client/mqtt_example
 
 ### Modify code:
-1. line 159 - String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
-2. line 172 - sleep 300 ms 
-3. numMessages = 1000 in the options file
+* line 159 - String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
+* line 172 - sleep 300 ms 
+* numMessages = 1000 in the options file
 
 ### Clean and compile 
 mvn clean compile
