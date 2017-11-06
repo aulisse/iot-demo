@@ -45,7 +45,7 @@ gcloud auth login
 gcloud config set project $projectID
 ```
 
-### Create the $tempLocation in CloudStorage
+### Create the temp location in CloudStorage
 ```shell
 gsutil mb gs://$bucket/ && touch a-file && echo "temp" > a-file && gsutil cp a-file gs://$tempLocation && rm a-file
 ```
@@ -63,7 +63,7 @@ gcloud beta pubsub topics create $topic
 
 ### Configure IAM account for Cloud IoT
 
-In the IAM section of the Cloud Console: add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to the PubSub topic (it is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker)
+In the [IAM section of the Cloud Console](https://console.cloud.google.com/iam-admin/iam): add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to the PubSub topic (it is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker)
 
 ### Create CloudIoT instance
 ```shell
