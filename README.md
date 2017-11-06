@@ -63,8 +63,7 @@ gcloud beta pubsub topics create $topic
 
 ### Configure IAM account for Cloud IoT
 
-In the IAM section of the Cloud Console: add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to that PubSub topic
-It is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker.
+In the IAM section of the Cloud Console: add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to the PubSub topic (it is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker)
 
 ### Create CloudIoT instance
 ```shell
@@ -129,6 +128,7 @@ mvn exec:java -Dexec.mainClass="com.google.cloud.iot.examples.MqttExample" -Dexe
 bq query "select count(*) as count FROM [$table]"
 bq query "SELECT hour, avg(temperature) as avg_temp FROM [$table] group by hour order by hour asc"
 ```
+If the Java client did not finish yet, run the queries in another shell window (run set_params.sh before running the queries)
 
 # How to shut down the demo:
-Run clean.sh to free up resources
+Run set_params.sh and clean.sh to free up resources
