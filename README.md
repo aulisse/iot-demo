@@ -1,5 +1,7 @@
 # iot-demo
 
+# License
+
 Copyright 2017 Google Inc.
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,20 +16,20 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-Purpose:
+# Purpose
 The purpose of this demo is to show how simple it is to create a serverless and scalable architecture using GCP.
 The script will guide you through the creation of all the GCP components needed to:
 - ingest data from a device
 - process data
 - analyse data
 
-Requirements:
+# Requirements:
 - a GCP account (https://cloud.google.com/free/)
 - a GCP project (https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project)
 - gcloud (https://cloud.google.com/sdk/gcloud/#what_is_gcloud)
 - JDK and maven
 
-How to run the demo:
+# How to run the demo:
 Set your project id in set_params.sh and then execute the following steps
 
 #set parameters
@@ -49,9 +51,9 @@ cd $home
 #create pubsub topic
 gcloud beta pubsub topics create $topic
 
-# in the IAM section of the Cloud Console:
-# add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to that PubSub topic
-# It is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker.
+#in the IAM section of the Cloud Console:
+#add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to that PubSub topic
+#It is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker.
 
 #create CloudIoT instance
 gcloud beta iot registries create $registryName \
@@ -82,10 +84,10 @@ curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $(gcl
 #move to Java client folder
 cd $home/java-docs-samples/iot/api-client/mqtt_example
 
-# modify code:
-# 1) line 159 - String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
-# 2) line 172 - sleep 300 ms 
-# 3) numMessages = 1000 in the options file
+#modify code:
+#line 159 - String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
+#line 172 - sleep 300 ms 
+#numMessages = 1000 in the options file
 
 #clean and compile 
 mvn clean compile
@@ -97,5 +99,5 @@ mvn exec:java -Dexec.mainClass="com.google.cloud.iot.examples.MqttExample" -Dexe
 bq query "select count(*) as count FROM [$table]"
 bq query "SELECT hour, avg(temperature) as avg_temp FROM [$table] group by hour order by hour asc"
 
-How to shut down the demo:
-- Use clean.sh to free up resources
+# How to shut down the demo:
+Use clean.sh to free up resources
