@@ -139,7 +139,7 @@ mvn exec:java -Dexec.mainClass="com.google.cloud.iot.examples.MqttExample" -Dexe
 bq query "select count(*) as count FROM [$table]"
 bq query "SELECT hour, avg(temperature) as avg_temp FROM [$table] group by hour order by hour asc"
 ```
-If the Java client did not finish yet, run the queries in another shell window (run set_params.sh before running the queries)
+If the Java client did not finish yet, run the queries in another shell window (run set_params.sh before running the queries). Alternatevely, you can run the queries in BigQuery console and then click "Save to Google Sheets" (where you might want to leverage the Explore feature - bottom right corner of the sheet - to generate automatically a chart)
 
 # How to shut down the demo:
 Run set_params.sh and clean.sh to free up resources
