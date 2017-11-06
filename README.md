@@ -109,9 +109,20 @@ cd $home/java-docs-samples/iot/api-client/mqtt_example
 ```
 
 ### Modify code:
-* line 159 - String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
-* line 172 - sleep 300 ms 
-* numMessages = 1000 in the options file
+* MqttExample.java, line 159 
+```java
+String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
+```
+* MqttExample.java, line 172 
+```java
+sleep 300 ms 
+```
+* MqttExampleOptions.java, line 32
+```java
+numMessages = 1_000
+```
+
+Feel free to change values for payload, sleep and numMessages but do not modify the json structure of the payload.
 
 ### Clean and compile 
 ```shell
