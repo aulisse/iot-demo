@@ -28,9 +28,9 @@ The script will guide you through the creation of all the GCP components needed 
 - JDK and maven
 
 # How to run the demo:
-Set your project id in set_params.sh and then execute the following steps
 
 ### Set parameters
+Export yout project id in GCLOUD_PROJECT, then:
 ```shell
 . set_params.sh
 ```
