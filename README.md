@@ -103,6 +103,12 @@ bq mk -t $table message:string,city:string,temperature:float,hour:integer
 ```
 
 ### Run pipeline
+
+Enable DataFlow apis, then run the pipeline using PubSub-2-BigQuery Template
+```shell
+gcloud service-management enable dataflow.googleapis.com
+```
+
 ```shell
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer $(gcloud auth print-access-token)" https://dataflow.googleapis.com/v1b3/projects/$projectID/templates:launch?gcsPath=gs://dataflow-templates/pubsub-to-bigquery/template_file -d  '{"jobName":"'$jobName'","parameters":{"topic":"'$topicFullName'","table":"'$table'"},"environment":{"tempLocation":"gs://'$tempLocation'","maxWorkers":"'$maxWorkers'","zone":"'$dataflowzone'"}}'
 ```
