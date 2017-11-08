@@ -22,9 +22,9 @@ The script will guide you through the creation of all the GCP components needed 
 - analyse data
 
 # Requirements:
-- a GCP account (https://cloud.google.com/free/)
-- a GCP project (https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project)
-- gcloud (https://cloud.google.com/sdk/gcloud/#what_is_gcloud)
+- [a GCP account] (https://cloud.google.com/free/)
+- [a GCP project] (https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project)
+- [gcloud] (https://cloud.google.com/sdk/gcloud/#what_is_gcloud)
 - JDK and maven
 
 # How to run the demo:
