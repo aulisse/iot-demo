@@ -113,6 +113,9 @@ cd $home/java-docs-samples/iot/api-client/mqtt_example
 ```
 
 ### Modify code:
+
+Using an IDE or a text editor modify the following row as described. Files are located in subfolder 'src/main/java/com/google/cloud/iot/examples/'
+
 * MqttExample.java, line 159 
 ```java
 String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Milan\",\"temperature\":\""+(20+new java.util.Random().nextDouble()*5)+"\",\"hour\":\""+(new java.util.Random().nextInt(24))+"\"}", options.registryId, options.deviceId, i);
