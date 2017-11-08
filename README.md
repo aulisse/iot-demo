@@ -131,7 +131,7 @@ String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Mil
 sleep 300 ms 
 ```
 
-Feel free to change values for payload, sleep and numMessages but do not modify the json structure of the payload.
+Feel free to change values for payload and sleep but do not modify the json structure of the payload.
 
 ### Clean and compile 
 ```shell
