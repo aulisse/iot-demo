@@ -30,3 +30,6 @@ gcloud dataflow jobs cancel $job_id --region=$dataflowzone
 
 #delete BigQuery table
 bq rm $table
+
+gcloud projects remove-iam-policy-binding $projectID \
+--member serviceAccount:cloud-iot@system.gserviceaccount.com --role roles/pubsub.publisher

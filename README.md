@@ -63,7 +63,11 @@ gcloud beta pubsub topics create $topic
 
 ### Configure IAM account for Cloud IoT
 
-In the [IAM section of the Cloud Console](https://console.cloud.google.com/iam-admin/iam): add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to the PubSub topic (it is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker)
+In the [IAM section of the Cloud Console](https://console.cloud.google.com/iam-admin/iam): add the special account cloud-iot@system.gserviceaccount.com with the role Publisher to the PubSub topic (it is needed to allow Cloud IoT to push into PubSub messages received on the MQTT broker). Alternatevely use the gcloud command.
+```shell
+gcloud projects add-iam-policy-binding $projectID \
+--member serviceAccount:cloud-iot@system.gserviceaccount.com --role roles/pubsub.publisher
+```
 
 ### Create CloudIoT instance
 ```shell
