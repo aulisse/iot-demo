@@ -130,10 +130,6 @@ String payload = String.format("{\"message\":\"%s/%s-message-%d\",\"city\":\"Mil
 ```java
 sleep 300 ms 
 ```
-* MqttExampleOptions.java, line 32
-```java
-numMessages = 1_000
-```
 
 Feel free to change values for payload, sleep and numMessages but do not modify the json structure of the payload.
 
@@ -144,7 +140,7 @@ mvn clean compile
 
 ### Run MQTT client
 ```shell
-mvn exec:java -Dexec.mainClass="com.google.cloud.iot.examples.MqttExample" -Dexec.args="-project_id='$projectID' -registry_id='$registryName' -device_id='$deviceName' -private_key_file=../../../../rsa_private_pkcs8 -algorithm=RS256 -mqtt_bridge_port=443"
+mvn exec:java -Dexec.mainClass="com.google.cloud.iot.examples.MqttExample" -Dexec.args="-project_id='$projectID' -registry_id='$registryName' -device_id='$deviceName' -private_key_file=../../../../rsa_private_pkcs8 -algorithm=RS256 -mqtt_bridge_port=443 -num_messages=1000"
 ```
 
 ## Run queries during the ingestion
