@@ -32,5 +32,5 @@ gcloud dataflow jobs cancel $job_id --region=$dataflowzone
 bq rm $table
 
 #optionally, remove service account for cloud-iot
-gcloud projects remove-iam-policy-binding $projectID \
---member serviceAccount:cloud-iot@system.gserviceaccount.com --role roles/pubsub.publisher
+#gcloud projects remove-iam-policy-binding $projectID \
+#--member serviceAccount:cloud-iot@system.gserviceaccount.com --role roles/pubsub.publisher
